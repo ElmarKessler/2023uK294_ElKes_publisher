@@ -1,0 +1,138 @@
+{
+"book_language": [
+	{
+		"id" : 1,
+		"language_code" : "eng",
+		"language_name" : "English"
+	},
+	{
+		"id" : 2,
+		"language_code" : "en-US",
+		"language_name" : "United States English"
+	},
+	{
+		"id" : 3,
+		"language_code" : "fre",
+		"language_name" : "French"
+	},
+	{
+		"id" : 4,
+		"language_code" : "spa",
+		"language_name" : "Spanish"
+	},
+	{
+		"id" : 5,
+		"language_code" : "en-GB",
+		"language_name" : "British English"
+	},
+	{
+		"id" : 6,
+		"language_code" : "mul",
+		"language_name" : "Multiple Languages"
+	},
+	{
+		"id" : 7,
+		"language_code" : "grc",
+		"language_name" : "Greek"
+	},
+	{
+		"id" : 8,
+		"language_code" : "enm",
+		"language_name" : "Middle English"
+	},
+	{
+		"id" : 9,
+		"language_code" : "en-CA",
+		"language_name" : "Canadian English"
+	},
+	{
+		"id" : 10,
+		"language_code" : "ger",
+		"language_name" : "German"
+	},
+	{
+		"id" : 11,
+		"language_code" : "jpn",
+		"language_name" : "Japanese"
+	},
+	{
+		"id" : 12,
+		"language_code" : "ara",
+		"language_name" : "Arabic"
+	},
+	{
+		"id" : 13,
+		"language_code" : "nl",
+		"language_name" : "Dutch"
+	},
+	{
+		"id" : 14,
+		"language_code" : "zho",
+		"language_name" : "Chinese"
+	},
+	{
+		"id" : 15,
+		"language_code" : "lat",
+		"language_name" : "Latin"
+	},
+	{
+		"id" : 16,
+		"language_code" : "por",
+		"language_name" : "Portuguese"
+	},
+	{
+		"id" : 17,
+		"language_code" : "srp",
+		"language_name" : "Serbian"
+	},
+	{
+		"id" : 18,
+		"language_code" : "ita",
+		"language_name" : "Italian"
+	},
+	{
+		"id" : 19,
+		"language_code" : "rus",
+		"language_name" : "Russian"
+	},
+	{
+		"id" : 20,
+		"language_code" : "msa",
+		"language_name" : "Malaysian"
+	},
+	{
+		"id" : 21,
+		"language_code" : "glg",
+		"language_name" : "Galician"
+	},
+	{
+		"id" : 22,
+		"language_code" : "wel",
+		"language_name" : "Welsh"
+	},
+	{
+		"id" : 23,
+		"language_code" : "swe",
+		"language_name" : "Swedish"
+	},
+	{
+		"id" : 24,
+		"language_code" : "nor",
+		"language_name" : "Norwegian"
+	},
+	{
+		"id" : 25,
+		"language_code" : "tur",
+		"language_name" : "Turkish"
+	},
+	{
+		"id" : 26,
+		"language_code" : "gla",
+		"language_name" : "Gaelic"
+	},
+	{
+		"id" : 27,
+		"language_code" : "ale",
+		"language_name" : "Aleut"
+	}
+]}

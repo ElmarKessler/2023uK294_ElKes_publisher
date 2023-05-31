@@ -1,0 +1,11 @@
+{
+"address_status": [
+	{
+		"id" : 1,
+		"address_status" : "Active"
+	},
+	{
+		"id" : 2,
+		"address_status" : "Inactive"
+	}
+]}
