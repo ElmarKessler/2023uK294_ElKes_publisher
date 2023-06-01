@@ -1,47 +1,46 @@
-# README #
+# Getting Started with Create React App
 
-Zweck dieses Projektes ist es ein REST-Api zu verfügung zu stellen. Für dies wird das bestehende package json-server mit json-server-auth und express genutzt. 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Beschreibung ###
+## Available Scripts
 
-Die Basis dieses Servers ist das package json-server-auth: 
-[link zu der Dokumentation](https://github.com/jeremyben/json-server-auth#readme)
-Die Dokumentation über die Authentifizierung und Authorisierung ist dort abgelegt. Basis ist jedenfalls die Datei routes
+In the project directory, you can run:
 
-Beim builden des Images werden alle json-Dateien aus dem Verzeichnis **jsons** miteinander zu der Datei db zusammengefügt. Der json-server startet dann. Zusätzlich können jedoch die Routes abgesichert werden. Dies geschieht mittels dem File routes.json. Aktuell sind **alle** Endpoints abgesichert.
+### `npm start`
 
-Folgende Dateien (somit Endpoints) gibt es in diesem Image:
-(Bitte immer hier nachführen, wenn Datein entfernt oder hinzugefügt werden)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- address
-- address_status
-- author
-- book
-- book_author
-- book_language
-- cars
-- country 
-- cust_order 
-- customer 
-- customer_address 
-- employee 
-- job 
-- order_history 
-- order_line 
-- order_status 
-- penguins
-- pokemons
-- publisher 
-- rickandmorty 
-- shipping_method
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-### Wie erstelle ich das Image? ### 
-`docker build -t registry.noseryoung.ch/noseryoung/restdb .`
-### Image in unsere Registry pushen ###
-`docker push registry.noseryoung.ch/noseryoung/restdb`
-### Wie starte ich einen container? ###
-`docker run -p 3000:3000 --name restdb -d registry.noseryoung.ch/noseryoung/restdb`
+### `npm test`
 
-da jedoch der Port 3000 meistens von React benutzt wird, lieber einen anderen Port nutzen z.Bsp 3030:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-`docker run -p 3030:3000 --name restdb -d registry.noseryoung.ch/noseryoung/restdb`
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
