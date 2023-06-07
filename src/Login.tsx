@@ -25,6 +25,7 @@ const Login = () => (
           AuthService().login(values)
           .then((response) => {
             console.log(response)
+            localStorage.setItem("jwt", response.accessToken)
           })
           .catch(err => {
             console.log(err)

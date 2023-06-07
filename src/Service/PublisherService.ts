@@ -8,7 +8,7 @@ const PublisherService = () => ({
   
     getAllDataFromDB: async () => {
       const response = await api.get("publisher");
-      return response.data.map((item: any) => item.url); // Return array von URLs
+      return response.data;//.map((item: any) => item.url); // Return array von URLs
     },
   
     createDataInDB: async (data: any) => {
@@ -26,3 +26,5 @@ const PublisherService = () => ({
       return response.data;
     },
   });
+
+  export default PublisherService;

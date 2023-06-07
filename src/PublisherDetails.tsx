@@ -1,8 +1,14 @@
 import Publisher from './Publisher';
+import { useEffect } from 'react';
+import PublisherService from './Service/PublisherService';
 
 
 function PublisherDetails() {
-//     let {id} = useParams();
+  useEffect(() => {
+    PublisherService().getAllDataFromDB().then( response => {
+      console.log(response)
+    })
+}, [])
   return (
     <div>
       <Publisher/>
