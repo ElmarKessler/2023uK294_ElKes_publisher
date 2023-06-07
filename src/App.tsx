@@ -1,19 +1,23 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Service/Home';
-import Login from './Service/Login';
-import React from 'react';
-import Publisher from './Publisher';
-import { AppBar } from '@mui/material';
-import SearchAppBar from './AppBar';
-import PublisherPage from './PublisherPage';
-import PublisherDetailPage from './PublisherDetailPage';
-import NotFound from './NotFound';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
+import Home from "./Home";
+import Login from "./Login";
+import PublisherPage from "./PublisherPage";
+import UpdatePublisher from "./UpdatePublisher";
+import NotFound from "./NotFound";
+import CreatePublisher from "./CreatePublisher";
+import DeletePublisher from "./DeletePublisher";
+import PublisherDetails from "./PublisherDetails";
+
+// Function to check if the user is authenticated
+const isAuthenticated = () => {
+  const jwt = localStorage.getItem("jwt");
+  return jwt !== null; // Return true if JWT token exists in localStorage
+};
 
 function App() {
   return (
-    <Router>
-    {/* <SearchAppBar/> */}
-  <nav>
+    <>
+      <nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -25,19 +29,37 @@ function App() {
             <Link to="/publisher">Publisher</Link>
           </li>
           <li>
-            <Link to="/publisher/example">Publisher Detail</Link>
+            <Link to="/publisher/create">Create Publisher</Link>
+          </li>
+          <li>
+            <Link to="/publisher/read">Publisher Details</Link>
+          </li>
+          <li>
+            <Link to="/publisher/update/">Update Publisher</Link>
+          </li>
+          <li>
+            <Link to="/publisher/delete/">Delete Publisher</Link>
           </li>
         </ul>
       </nav>
 
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/login" element={<Login />} />
-    <Route path="publisher" element={<PublisherPage/>} />
-    <Route path="publisher/:name" element={<PublisherDetailPage/>} />
-    <Route path="*" element={<NotFound/>} />
-  </Routes>
-  </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          {isAuthenticated() ? (
+            <>
+              <Route path="/publisher" element={<PublisherPage />} />
+              <Route path="/publisher/create" element={<CreatePublisher />} />
+              <Route path="/publisher/read/" element={<PublisherDetails />} />
+              <Route path="/publisher/update/" element={<UpdatePublisher />} />
+              <Route path="/publisher/delete/" element={<DeletePublisher />} />
+            </>
+          ) : (
+            <Navigate to="/login" /> // Redirect to login page if not authenticated
+          )}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+    </>
   );
 }
 

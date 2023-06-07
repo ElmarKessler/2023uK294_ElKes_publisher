@@ -17,6 +17,7 @@
     "@types/react-dom": "^18.2.4",
     "axios": "^1.4.0",
     "formik": "^2.4.1",
+    "localStorage": "^1.0.4",
     "mui": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

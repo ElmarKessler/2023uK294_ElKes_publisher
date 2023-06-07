@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchAppBar from '../AppBar';
-import Publisher from '../Publisher';
+import SearchAppBar from './AppBar';
+import Publisher from './Publisher';
 
 function Home() {
   return (
