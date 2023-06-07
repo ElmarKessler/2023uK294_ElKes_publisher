@@ -1,11 +1,11 @@
 import React from 'react';
+import SearchAppBar from '../AppBar';
+import Publisher from '../Publisher';
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the content of the home page.</p>
-    </div>
+      <p>Welcome to this Page</p>
+
   );
 }
 

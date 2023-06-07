@@ -1,48 +1,51 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from "react";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Login = () => (
+  <div>
+    <h1>Any place in your app!</h1>
+    <Formik
+      initialValues={{ email: "example@mail.com", password: "eXaMpLe" }}
+      validate={(values) => {
+        const errorsEm = { email: "" };
+        const errorsPw = { password: "" };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
 
-    try {
-      const response = await axios.post('/api/login', { email, password });
-      const token = response.data.token;
-      
-      // Store the token in local storage or any other secure storage mechanism
-      localStorage.setItem('token', token);
+        if (!values.email) {
+          errorsEm.email = "Required";
+        } else if (
+          !/^[A-Z0-9._8+-]+@[A-Z0-9.-]+.[A-Z1{2,]$/i.test(values.email)
+        ) {
+          errorsEm.email = "Invalid email address";
+        }
+        // if (!values.password) {
+        //   errorsPw.password = "Required";
+        // }
+        // return [errorsEm, errorsPw];
+        return errorsEm;
 
-      // Redirect to the protected page or perform any other necessary actions
-      // For example, you can use react-router-dom's useHistory hook to navigate to another page
-      // import { useHistory } from 'react-router-dom';
-      // const history = useHistory();
-      // history.push('/protected');
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
 
-      console.log('Login successful!');
-    } catch (error) {
-      console.error('Login failed:', error);
-    }
-  };
-
-  return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
-}
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+      {({ isSubmitting }) => (
+        <Form>
+          <Field type="email" name="email" />
+          <ErrorMessage name="email" component="div" />
+          <Field type="password" name="password" />
+          <ErrorMessage name="password" component="div" />{" "}
+          <button type="submit" disabled={isSubmitting}>
+            Submit{" "}
+          </button>
+        </Form>
+      )}
+    </Formik>
+  </div>
+);
 
 export default Login;
