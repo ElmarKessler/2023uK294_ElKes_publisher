@@ -1,7 +1,7 @@
 function PublisherPage() {
   return (
     <div>
-      <p>Page not found 404</p>
+      <p>Page not found 404 / No Id in URL!</p>
     </div>
   );
 }
