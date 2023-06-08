@@ -51,7 +51,7 @@ function App() {
               <Route path="/publisher/create" element={<CreatePublisher />} />
               <Route path="/publisher/read/:id" element={<PublisherDetails />} />
               <Route path="/publisher/update/" element={<UpdatePublisher />} />
-              <Route path="/publisher/delete/" element={<DeletePublisher />} />
+              <Route path="/publisher/delete/:id" element={<DeletePublisher />} />
            
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -23,7 +23,8 @@ function PublisherDetails() {
         <Card key={responseData.id}>
         <div>
         {responseData.publisher_name}
-        {responseData.incorporation_date.toDateString()}
+        <br></br>
+        {responseData.incorporation_date.toString()}
         </div>
       </Card>
       )
