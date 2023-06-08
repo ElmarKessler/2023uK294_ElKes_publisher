@@ -5,7 +5,7 @@ import Publisher from "./Components/Publisher";
 import { useParams } from "react-router-dom";
 
 function PublisherDetails() {
-  const {id} = useParams()
+  const { id } = useParams();
   const [responseData, setResponseData] = useState<Publisher>();
 
   useEffect(() => {
@@ -18,18 +18,16 @@ function PublisherDetails() {
 
   return (
     <div>
-    {
-      responseData && (
+      {responseData && (
         <Card key={responseData.id}>
-        <div>
-        {responseData.publisher_name}
-        <br></br>
-        {responseData.incorporation_date.toString()}
-        </div>
-      </Card>
-      )
-    }
-</div>
+          <div>
+            {responseData.publisher_name}
+            <br></br>
+            {responseData.incorporation_date.toString()}
+          </div>
+        </Card>
+      )}
+    </div>
   );
 }
 

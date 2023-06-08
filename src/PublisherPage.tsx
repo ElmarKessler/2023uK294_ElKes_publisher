@@ -5,7 +5,6 @@ import Publisher from "./Components/Publisher";
 import { Navigate } from "react-router-dom";
 
 function nav(id: number) {
-
   return <Navigate to={`/publisher/create/${id}`}></Navigate>;
 }
 
@@ -25,11 +24,14 @@ function PublisherPage() {
       {responseData.map((data: Publisher) => (
         <Card key={data.id}>
           {data.publisher_name}
-         <br></br>
+          <br></br>
           {data.incorporation_date.toString()}
-          <button onClick={() => PublisherService().deleteDataFromDB(Number(data.id))}>Delete</button>
+          <button
+            onClick={() => PublisherService().deleteDataFromDB(Number(data.id))}
+          >
+            Delete
+          </button>
           <button onClick={() => nav(data.id)}>Update</button>
-          
         </Card>
       ))}
     </div>
