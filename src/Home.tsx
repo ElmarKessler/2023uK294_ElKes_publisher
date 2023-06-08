@@ -1,6 +1,5 @@
 import React from 'react';
-import SearchAppBar from './AppBar';
-import Publisher from './Publisher';
+import SearchAppBar from './Components/AppBar';
 
 function Home() {
   return (

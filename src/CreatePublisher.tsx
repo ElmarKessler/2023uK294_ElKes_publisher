@@ -1,13 +1,12 @@
 import React from 'react';
-import SearchAppBar from './AppBar';
-import Publisher from './Publisher';
+import SearchAppBar from './Components/AppBar';
 import { Link } from 'react-router-dom';
 
 function createPublisher() {
 //     let {id} = useParams();
   return (
     <div>
-      <Publisher/>
+      
  {/* <h1>This is product with id {id}</h1> */}
     </div>
   );

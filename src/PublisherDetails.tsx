@@ -1,19 +1,34 @@
-import Publisher from './Publisher';
-import { useEffect } from 'react';
-import PublisherService from './Service/PublisherService';
-
+import React, { useEffect, useState } from "react";
+import PublisherService from "./Service/PublisherService";
+import { Card } from "@mui/material";
+import Publisher from "./Components/Publisher";
+import { useParams } from "react-router-dom";
 
 function PublisherDetails() {
+  const {id} = useParams()
+  const [responseData, setResponseData] = useState<Publisher>();
+
   useEffect(() => {
-    PublisherService().getAllDataFromDB().then( response => {
-      console.log(response)
-    })
-}, [])
+    PublisherService()
+      .getDataFromDB(Number(id))
+      .then((response) => {
+        setResponseData(response);
+      });
+  }, []);
+
   return (
     <div>
-      <Publisher/>
- {/* <h1>This is product with id {id}</h1> */}
-    </div>
+    {
+      responseData && (
+        <Card key={responseData.id}>
+        <div>
+        {responseData.publisher_name}
+        {responseData.incorporation_date.toDateString()}
+        </div>
+      </Card>
+      )
+    }
+</div>
   );
 }
 

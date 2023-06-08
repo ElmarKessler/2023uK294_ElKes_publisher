@@ -4,8 +4,6 @@ import AuthService from "./Service/AuthService";
 const Login = () => (
   <div>
     <h1>Any place in your app!</h1>
-    return
-    {
       <Formik
         initialValues={{ email: "elmar@mail.com", password: "12345" }}
         validate={(values) => {
@@ -45,7 +43,6 @@ const Login = () => (
           </Form>
         )}
       </Formik>
-    }
   </div>
 );
 

@@ -13,7 +13,6 @@ const isAuthenticated = () => {
   const jwt = localStorage.getItem("jwt");
   return jwt !== null; // Return true if JWT token exists in localStorage
 };
-
 function App() {
   return (
     <>
@@ -46,20 +45,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          {isAuthenticated() ? (
-            <>
+          
+            
               <Route path="/publisher" element={<PublisherPage />} />
               <Route path="/publisher/create" element={<CreatePublisher />} />
-              <Route path="/publisher/read/" element={<PublisherDetails />} />
+              <Route path="/publisher/read/:id" element={<PublisherDetails />} />
               <Route path="/publisher/update/" element={<UpdatePublisher />} />
               <Route path="/publisher/delete/" element={<DeletePublisher />} />
-            </>
-          ) : (
-            <Navigate to="/login" /> // Redirect to login page if not authenticated
-          )}
+           
           <Route path="*" element={<NotFound />} />
         </Routes>
-    </>
+     </>
   );
 }
 

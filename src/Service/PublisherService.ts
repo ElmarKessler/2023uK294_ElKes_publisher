@@ -3,7 +3,7 @@ import api from "./Api";
 const PublisherService = () => ({
     getDataFromDB: async (id: number) => {
       const data = await api.get(`publisher/read/${id}`);
-      return data["data"][0]["url"]; //Return einzelnes Element von DB
+      return data.data; //Return einzelnes Element von DB
     },
   
     getAllDataFromDB: async () => {
